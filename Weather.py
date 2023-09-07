@@ -3,7 +3,7 @@ import json
 
 
 
-
+# add weather key
 packages_json = weather_response.json()
 packages_str = json.dumps(packages_json, indent=2)
 

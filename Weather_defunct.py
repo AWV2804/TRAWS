@@ -6,14 +6,14 @@ import json
 
 # Requests data from Weather API
 def pull_api():
-	weather_response = requests.get("https://api.openweathermap.org/data/2.5/weather?lat=40.4259&lon=-86.9081&appid=36468be155548021577d9192b9d65c6d&units=metric")
+	# add weather API key
 	weather_contents_base = str(weather_response.content)
 	weather_contents_simple = weather_contents_base.replace(',',':')
 	weather_contents_simple = weather_contents_simple.replace('}','')
 	mod_weathercontents = (weather_contents_simple.split(':'))
 	return mod_weathercontents
 
-weather_response = requests.get("https://api.openweathermap.org/data/2.5/weather?lat=40.4259&lon=-86.9081&appid=36468be155548021577d9192b9d65c6d&units=metric")
+# add weather key
 packages_json = weather_response.json()
 packages_str = json.dumps(packages_json, indent=2)
 
